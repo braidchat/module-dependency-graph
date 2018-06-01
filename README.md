@@ -10,3 +10,5 @@ To run:
   - open `http://localhost:6123`
 
 Modules are defined in ./blob/master/src/braid_module_graph/modules.cljc
+
+Latest graph: ./blob/master/module-graph.svg
