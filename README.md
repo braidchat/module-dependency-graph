@@ -1,6 +1,6 @@
 # Braid Module Graph
 
-A small project to help plan out the extraction of modules from Braid's core. See https://github.com/braidchat/braid/issues/117 for context.
+A small project to help plan out the extraction of modules from Braid's core. See this issue (https://github.com/braidchat/braid/issues/117) for context.
 
 To run:
  
@@ -9,6 +9,8 @@ To run:
   - `(start!)`
   - open `http://localhost:6123`
 
-Modules are defined in ./blob/master/src/braid_module_graph/modules.cljc
+Modules are defined in [src/braid_module_graph/modules.cljc](./src/braid_module_graph/modules.cljc)
 
-Latest graph: ./blob/master/module-graph.svg
+Latest graph: [module-graph.svg](./module-graph.svg)
+
+<img src="./module-graph.svg">
