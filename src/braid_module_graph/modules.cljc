@@ -140,10 +140,6 @@
     :deps #{"group-page"
             "group-header"}}
 
-   
-
-   
-
    {:id "emoji"
     :new? false
     :provides? true
@@ -241,8 +237,6 @@
             "state"
             "user-settings"}}
 
-   
-
    {:id "email-digest"
     :new? false
     :provides? false
@@ -279,10 +273,6 @@
     :deps #{"group-page"
             "conversations"
             "group-header"}}
-
-   
-
-   
 
    {:id "user-avatar"
     :description "Allows users to have an avatar"
@@ -343,10 +333,6 @@
     :provides? false
     :deps #{"code-display"}}
 
-   
-
-   
-
    {:id "long-reply"
     :new? true
     :provides? false
@@ -363,8 +349,6 @@
             "long-reply"
             "group-settings"}}
 
-   
-
    {:id "stars"
     :new? true
     :provides? false
@@ -379,8 +363,6 @@
     :deps #{"group-page"
             "email"
             "user-menu"}}
-
-   
 
    {:id "reactions"
     :new? true
