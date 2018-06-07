@@ -19,13 +19,14 @@
                                  "solid"
                                  "filled")
                          shape "box"
-                         color "#4cafef"
+                         color (if (node :extracted?) 
+                                 "#4cafef"
+                                 "#9ed1f3")
                          rounded (if (node :provides?)
-                                   true
-                                   false)
+                                   false 
+                                   true)
                          styles [fill
-                                 (if rounded "rounded" "")]
-                         ]
+                                 (if rounded "rounded" "")]]
                      (str (pr-str (node :id)) 
                           " [" "style=" "\"" (string/join "," styles) "," fill "\"" ", " 
                                "color=" (pr-str color) ", "
@@ -40,7 +41,7 @@
                         (->> [(str "subgraph " (gensym "cluster") " {")
                               (str "penwidth=3;")
                               (str "style=filled;")
-                              (str "color=\"#cccccc\";")
+                              (str "color=\"#eeeeee\";")
                               (str "label = " (pr-str (node :id)) ";")
                               (for [node (node :modules)]
                                 (node-str node))

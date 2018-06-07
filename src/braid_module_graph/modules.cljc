@@ -5,12 +5,12 @@
 
 (def modules
   [{:id "legend"
-    :modules [{:id "TODO"
+    :modules [{:id "new"
                :new? true}
-              {:id "exists"
+              {:id "in-core"
                :new? false}
-              {:id "provides"
-               :provides? true}]}
+              {:id "extracted"
+               :extracted? true}]}
    
    {:id "braid-server"
     :modules [{:id "system-settings"
@@ -50,8 +50,8 @@
                :new? false
                :provides? true
                :description "Implements the group header UI.
-                            Allows modules to add buttons to the header."}
-              ]} 
+                            Allows modules to add buttons to the header."}]} 
+
   {:id "inbox"
    :descriptions "UI for inbox"
    :new? false
@@ -79,10 +79,10 @@
                :provides? true
                :description "Provides modules ways to add UI to the conversation header."}
               {:id "message-preprocess"
+               :new? true
+               :provides? true
                :description "Allows modules to modify messages before they are actually sent,
-                            including the potential to prevent messages from sending."
-               :new? false
-               :provides? true}]}
+                            including the potential to prevent messages from sending."}]}
 
    {:id "group-page"
     :new? false
@@ -143,6 +143,7 @@
    {:id "emoji"
     :new? false
     :provides? true
+    :extracted? true
     :description "Allows modules to define emoji, that will show in autocomplete and messages."
     :deps #{"autocomplete"
             "message-render"
@@ -178,9 +179,10 @@
             "message-render"
             "tags"}}
 
-   {:id "emoji-one"
+   {:id "emojione-emoji"
     :new? false
     :provides? false
+    :extracted? true
     :description "Provides emoji-one style emojis"
     :deps #{"emoji"}}
 
@@ -191,11 +193,19 @@
     :deps #{"emoji"}}
 
    {:id "custom-emoji"
-    :new? true
+    :new? false
     :provides? false
+    :extracted? true
     :description "Allows group admins to upload and set custom group emoji."
     :deps #{"emoji"
             "group-settings"}}
+
+   {:id "big-emoji"
+    :new? false
+    :provides? false
+    :extracted? true
+    :description "Embiggens emoji when it is the sole content of a message"
+    :deps #{"emoji"}}
 
    {:id "auth"
     :new? false
@@ -285,6 +295,7 @@
    {:id "embeds"
     :new? false
     :provides? true
+    :extracted? true
     :deps #{"message-footer-ui"}}
 
    {:id "google-maps-embeds"
@@ -296,6 +307,7 @@
    {:id "video-embeds"
     :new? false
     :provides? false
+    :extracted? true
     :description "Displays embedded video player when a video URL is in a message."
     :deps #{"embeds"}}
 
@@ -314,12 +326,14 @@
    {:id "website-embeds"
     :new? false
     :provides? false
+    :extracted? true
     :description "Displays embedded website-info for URLs."
     :deps #{"embeds"}}
 
    {:id "image-embeds"
     :new? false
     :provides? false
+    :extracted? true
     :description "Displays embedded image when an image URL is in a message."
     :deps #{"embeds"}}
 
@@ -440,6 +454,7 @@
 
    {:id "quests"
     :new? false
+    :extracted? true
     :provides? true
     :description "Provides modules a way to define 'quests' - tasks for the user to perform to learn about how to use Braid functionality."
     :deps #{"state"
@@ -461,6 +476,7 @@
    {:id "payments"
     :new? false
     :provides? false
+    :extracted? true
     :description "Implments way for group owner to pay a subscription to administrator"
     :deps #{"group-settings"
             "group-header"
